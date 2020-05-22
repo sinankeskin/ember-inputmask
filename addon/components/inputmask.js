@@ -31,6 +31,13 @@ export default class InputmaskComponent extends Component {
   }
 
   @action
+  _onChange(event) {
+    if (this.args.update && typeof this.args.update === 'function') {
+      this.args.update(event.target.inputmask.unmaskedvalue());
+    }
+  }
+
+  @action
   _initialize(element) {
     this.element = element;
 
@@ -45,10 +52,10 @@ export default class InputmaskComponent extends Component {
 
   @action
   _destroy() {
-    this.inputmask.remove();
+    this.element.inputmask.remove();
   }
 
   _setInputMask() {
-    this.inputmask = new Inputmask(this._options).mask(this.element);
+    new Inputmask(this._options).mask(this.element);
   }
 }
