@@ -31,9 +31,9 @@ export default class InputmaskComponent extends Component {
   }
 
   @action
-  _onChange(event) {
+  _onChange() {
     if (this.args.update && typeof this.args.update === 'function') {
-      this.args.update(event.target.inputmask.unmaskedvalue());
+      this.args.update(this.element.inputmask.unmaskedvalue());
     }
   }
 
