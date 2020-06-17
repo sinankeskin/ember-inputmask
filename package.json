@@ -1,13 +1,15 @@
 {
   "name": "ember-inputmask5",
   "version": "0.0.6",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "Ember addon for Inputmask input mask library.",
   "keywords": [
-    "ember-addon"
+    "ember-addon",
+    "inputmask",
+    "mask"
   ],
-  "repository": "",
+  "repository": "https://github.com/sinankeskin/ember-inputmask",
   "license": "MIT",
-  "author": "",
+  "author": "Sinan Keskin <sinan@kesk.in> (https://kesk.in)",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -25,7 +27,7 @@
   },
   "dependencies": {
     "@ember/render-modifiers": "^1.0.2",
-    "ember-cli-babel": "^7.20.5",
+    "ember-cli-babel": "^7.21.0",
     "ember-cli-htmlbars": "^5.1.2",
     "inputmask": "5.0.1"
   },
@@ -51,8 +53,8 @@
     "ember-source-channel-url": "^2.0.1",
     "ember-template-lint": "^2.8.0",
     "ember-try": "^1.4.0",
-    "eslint": "^7.1.0",
-    "eslint-plugin-ember": "^8.6.0",
+    "eslint": "^7.2.0",
+    "eslint-plugin-ember": "^8.7.0",
     "eslint-plugin-node": "^11.1.0",
     "loader.js": "^4.7.0",
     "npm-run-all": "^4.1.5",
