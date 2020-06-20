@@ -52,7 +52,9 @@ export default class InputmaskComponent extends Component {
 
   @action
   _destroy() {
-    this.element.inputmask.remove();
+    if (this.element.inputmask) {
+      this.element.inputmask.remove();
+    }
   }
 
   _setInputMask() {
