@@ -3,7 +3,7 @@
   class="input-mask"
   value={{@value}}
   ...attributes
-  {{on 'change' this._onChange}}
+  {{on 'input' this._onInput}}
   {{did-insert this._initialize}}
   {{did-update this._update this._options}}
   {{will-destroy this._destroy}}
