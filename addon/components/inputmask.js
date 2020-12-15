@@ -1,6 +1,7 @@
 /* globals Inputmask */
 import Component from '@glimmer/component';
 import { action } from '@ember/object';
+import { cached } from '@glimmer/tracking';
 import { getOwner } from '@ember/application';
 
 export default class InputmaskComponent extends Component {
@@ -12,6 +13,7 @@ export default class InputmaskComponent extends Component {
     Inputmask.extendAliases(config['ember-inputmask5'] ? config['ember-inputmask5']['aliases'] : {});
   }
 
+  @cached
   get _options() {
     const options = {};
 
