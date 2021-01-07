@@ -6,11 +6,20 @@ import { getOwner } from '@ember/application';
 
 export default class InputmaskComponent extends Component {
   _setDefaults() {
-    const config = getOwner(this).resolveRegistration('config:environment') || {};
+    const config =
+      getOwner(this).resolveRegistration('config:environment') || {};
 
-    Inputmask.extendDefaults(config['ember-inputmask5'] ? config['ember-inputmask5']['defaults'] : {});
-    Inputmask.extendDefinitions(config['ember-inputmask5'] ? config['ember-inputmask5']['definitions'] : {});
-    Inputmask.extendAliases(config['ember-inputmask5'] ? config['ember-inputmask5']['aliases'] : {});
+    Inputmask.extendDefaults(
+      config['ember-inputmask5'] ? config['ember-inputmask5']['defaults'] : {}
+    );
+    Inputmask.extendDefinitions(
+      config['ember-inputmask5']
+        ? config['ember-inputmask5']['definitions']
+        : {}
+    );
+    Inputmask.extendAliases(
+      config['ember-inputmask5'] ? config['ember-inputmask5']['aliases'] : {}
+    );
   }
 
   @cached
