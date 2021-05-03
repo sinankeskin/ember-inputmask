@@ -1,7 +1,7 @@
 /* globals Inputmask */
 import Component from '@glimmer/component';
 import { action } from '@ember/object';
-import { cached } from '@glimmer/tracking';
+import { cached } from 'tracked-toolbox';
 import { getOwner } from '@ember/application';
 
 export default class InputmaskComponent extends Component {
