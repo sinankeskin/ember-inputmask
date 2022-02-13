@@ -3,6 +3,7 @@
   class='input-mask'
   value={{@value}}
   ...attributes
+  {{did-insert this._initialize}}
   {{on 'input' this._onInput}}
   {{inputmask this.args}}
 />
