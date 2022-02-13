@@ -1,10 +1,7 @@
 <input
-  type="text"
-  class="input-mask"
+  type='text'
+  class='input-mask'
   value={{@value}}
   ...attributes
-  {{on 'input' this._onInput}}
-  {{did-insert this._initialize}}
-  {{did-update this._update this._options}}
-  {{will-destroy this._destroy}}
+  {{inputmask this.args}}
 />
