@@ -12,11 +12,4 @@ module.exports = {
       plugins: [require.resolve('ember-auto-import/babel-plugin')],
     },
   },
-
-  included(app) {
-    this._super.included.apply(this, arguments);
-
-    // InputMask JS
-    app.import('node_modules/inputmask/dist/inputmask.js');
-  },
 };
