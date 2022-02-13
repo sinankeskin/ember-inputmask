@@ -36,7 +36,7 @@ ENV['ember-inputmask5'] = {
 };
 ```
 
-Examples;
+Example as a component
 
 ```handlebars
 <Inputmask @mask="999 999 99 99" />
@@ -46,6 +46,15 @@ Please check [Inputmask](https://github.com/RobinHerbots/Inputmask#options) site
 
 ```handlebars
 <Inputmask @mask="999 999 99 99" @placeholder="_" @clearIncomplete={{true}} />
+```
+
+Example as a modifer
+
+```handlebars
+<Input {{inputmask mask="999 999 99 99" placeholder="_" clearIncomplete=true}} />
+```
+```handlebars
+<input type="text" {{inputmask mask="999 999 99 99" placeholder="_" clearIncomplete=true}} />
 ```
 
 ## Contributing
