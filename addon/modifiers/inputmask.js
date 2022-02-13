@@ -27,7 +27,14 @@ export default class InputmaskModifier extends Modifier {
 
   _initialize() {
     this._setDefaults();
-    this._setInputMask();
+
+    const args = this.getArgs();
+
+    this._setInputMask(args);
+
+    if (args.registerAPI && typeof args.registerAPI === 'function') {
+      args.registerAPI(this.element);
+    }
   }
 
   _setDefaults() {
@@ -47,7 +54,7 @@ export default class InputmaskModifier extends Modifier {
     );
   }
 
-  _setInputMask() {
-    new Inputmask(this.getArgs()).mask(this.element);
+  _setInputMask(args) {
+    new Inputmask(args).mask(this.element);
   }
 }
