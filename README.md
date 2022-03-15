@@ -67,14 +67,14 @@ for example to hide or show programmatically, pass an action to registerAPI
 ```javascript
 // save the inputmask instance to use later
 @action
-saveApi(input) {
-  this.input = input;
+saveApi(inputmask) {
+  this.inputmask = inputmask;
 }
 
 // programmatically show unmasked value
 @action
 openFocusOut() {
-  console.log(this.input.inputmask.unmaskedvalue());
+  console.log(this.inputmask.unmaskedvalue());
 }
 ```
 
