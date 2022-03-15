@@ -33,7 +33,7 @@ export default class InputmaskModifier extends Modifier {
     this._setInputMask(args);
 
     if (args.registerAPI && typeof args.registerAPI === 'function') {
-      args.registerAPI(this.element);
+      args.registerAPI(this.element.inputmask);
     }
   }
 
