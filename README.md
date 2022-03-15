@@ -61,20 +61,20 @@ If you would like access to the inputmask instance in order to call some methods
 for example to hide or show programmatically, pass an action to registerAPI
 
 ```handlebars
-<Input {{inputmask registerApi=this.saveApi mask="999 999 99 99" placeholder="_" clearIncomplete=true}} />
+<Input {{inputmask registerAPI=this.saveApi mask="999 999 99 99" placeholder="_" clearIncomplete=true}} />
 ```
 
 ```javascript
 // save the inputmask instance to use later
 @action
-saveApi(inputmask) {
-  this.inputmask = inputmask;
+saveApi(input) {
+  this.input = input;
 }
 
 // programmatically show unmasked value
 @action
 openFocusOut() {
-  console.log(this.inputmask.unmaskedvalue());
+  console.log(this.input.inputmask.unmaskedvalue());
 }
 ```
 
