@@ -27,8 +27,10 @@ jobs:
         run: npm ci
       - name: Lint
         run: npm run lint
+        working-directory: addon
       - name: Run Tests
         run: npm run test:ember
+        working-directory: test-app
 
   floating:
     name: "Floating Dependencies"
@@ -44,6 +46,7 @@ jobs:
         run: npm install --no-shrinkwrap
       - name: Run Tests
         run: npm run test:ember
+        working-directory: test-app
 
   try-scenarios:
     name: ${{ matrix.try-scenario }}
@@ -74,3 +77,4 @@ jobs:
         run: npm ci
       - name: Run Tests
         run: ./node_modules/.bin/ember try:one ${{ matrix.try-scenario }}
+        working-directory: test-app
