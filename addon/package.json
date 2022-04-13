@@ -15,6 +15,9 @@
     "test": "tests"
   },
   "scripts": {
+    "build": "rollup --config",
+    "prepublishOnly": "rollup --config",
+    "start": "rollup --config --watch",
     "lint": "npm-run-all --aggregate-output --continue-on-error --parallel lint:!'(fix)'",
     "lint:fix": "npm-run-all --aggregate-output --continue-on-error --parallel lint:*:fix",
     "lint:hbs": "ember-template-lint .",
@@ -22,16 +25,29 @@
     "lint:js": "eslint . --cache",
     "lint:js:fix": "eslint . --fix"
   },
+  "exports": {
+    ".": "./dist/index.js",
+    "./*": "./dist/*",
+    "./test-support": "./dist/test-support/index.js",
+    "./addon-main.js": "./addon-main.js"
+  },
+  "files": [
+    "addon-main.js",
+    "dist"
+  ],
   "dependencies": {
     "@ember/render-modifiers": "^2.0.4",
-    "ember-auto-import": "^2.4.0",
-    "ember-cli-babel": "^7.26.11",
-    "ember-cli-htmlbars": "^6.0.1",
+    "@embroider/addon-shim": "^1.6.0",
     "ember-modifier": "^3.1.0",
     "inputmask": "^5.0.7"
   },
   "devDependencies": {
+    "@babel/core": "^7.17.9",
     "@babel/eslint-parser": "^7.17.0",
+    "@babel/plugin-proposal-class-properties": "^7.16.7",
+    "@babel/plugin-proposal-decorators": "^7.17.9",
+    "@embroider/addon-dev": "^1.6.0",
+    "@rollup/plugin-babel": "^5.3.1",
     "eslint": "^8.11.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-ember": "^10.5.9",
@@ -39,12 +55,22 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-qunit": "^7.2.0",
     "npm-run-all": "^4.1.5",
-    "prettier": "^2.5.1"
+    "prettier": "^2.5.1",
+    "rollup": "^2.70.1"
   },
   "engines": {
     "node": "12.* || 14.* || >= 16"
   },
   "ember": {
     "edition": "octane"
+  },
+  "ember-addon": {
+    "main": "addon-main.js",
+    "type": "addon",
+    "version": 2,
+    "app-js": {
+      "./components/inputmask.js": "./dist/_app_/components/inputmask.js",
+      "./modifiers/inputmask.js": "./dist/_app_/modifiers/inputmask.js"
+    }
   }
 }
