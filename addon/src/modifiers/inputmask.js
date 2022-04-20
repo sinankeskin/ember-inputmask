@@ -1,39 +1,49 @@
 /* globals Inputmask */
 import Modifier from 'ember-modifier';
 import { getOwner } from '@ember/application';
+import InputMask from "inputmask";
+import { registerDestructor } from '@ember/destroyable';
+
+let setDefaults = undefined;
 
 export default class InputmaskModifier extends Modifier {
-  getArgs() {
-    return Object.keys(this.args.named).length
-      ? this.args.named
-      : this.args.positional[0] || {};
+  constructor(owner, args) {
+    super(owner, args);
+    registerDestructor(this, this.cleanup);
   }
 
-  didUpdateArguments() {
-    this._setInputMask();
-  }
-
-  didInstall() {
-    import('inputmask/dist/inputmask').then(() => {
-      this._initialize();
-    });
-  }
-
-  willRemove() {
+  cleanup = () => {
     if (this.element.inputmask) {
       this.element.inputmask.remove();
     }
   }
 
-  _initialize() {
-    this._setDefaults();
+  getArgs(positional, named) {
+    return Object.keys(named).length
+      ? named
+      : positional[0] || {};
+  }
 
-    const args = this.getArgs();
+  element;
 
-    this._setInputMask(args);
+  modify(element, positional, named) {
+    if (!setDefaults) {
+      this._setDefaults();
+      this.setDefaults = true;
+    }
+
+    this.element = element;
+
+    const args = this.getArgs(positional, named);
+
+    new InputMask(args).mask(element);
 
     if (args.registerAPI && typeof args.registerAPI === 'function') {
-      args.registerAPI(this.element.inputmask);
+      args.registerAPI({
+        get inputmask() {
+          return element.inputmask;
+        }
+      });
     }
   }
 
@@ -54,7 +64,7 @@ export default class InputmaskModifier extends Modifier {
     );
   }
 
-  _setInputMask(args) {
-    new Inputmask(args).mask(this.element);
+  _setInputMask(element, args) {
+    return new InputMask(args).mask(element);
   }
 }
