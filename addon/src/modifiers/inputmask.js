@@ -1,7 +1,7 @@
 /* globals Inputmask */
 import Modifier from 'ember-modifier';
 import { getOwner } from '@ember/application';
-import InputMask from "inputmask";
+import InputMask from 'inputmask';
 import { registerDestructor } from '@ember/destroyable';
 
 let setDefaults = undefined;
@@ -16,12 +16,10 @@ export default class InputmaskModifier extends Modifier {
     if (this.element.inputmask) {
       this.element.inputmask.remove();
     }
-  }
+  };
 
   getArgs(positional, named) {
-    return Object.keys(named).length
-      ? named
-      : positional[0] || {};
+    return Object.keys(named).length ? named : positional[0] || {};
   }
 
   element;
@@ -42,7 +40,7 @@ export default class InputmaskModifier extends Modifier {
       args.registerAPI({
         get inputmask() {
           return element.inputmask;
-        }
+        },
       });
     }
   }
@@ -62,9 +60,5 @@ export default class InputmaskModifier extends Modifier {
     Inputmask.extendAliases(
       config['ember-inputmask5'] ? config['ember-inputmask5']['aliases'] : {}
     );
-  }
-
-  _setInputMask(element, args) {
-    return new InputMask(args).mask(element);
   }
 }
