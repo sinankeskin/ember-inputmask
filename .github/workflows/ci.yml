@@ -17,33 +17,34 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v3
       - name: Install Node
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: 12.x
-          cache: npm
+          node-version: 12
+          cache: yarn
       - name: Install Dependencies
-        run: npm ci
+        run: yarn
       - name: Lint
-        run: npm run lint
+        run: yarn run lint
       - name: Run Tests
-        run: npm run test:ember
+        run: yarn run test
 
   floating:
     name: "Floating Dependencies"
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
-          node-version: 12.x
-          cache: npm
+          node-version: 12
+          cache: yarn
       - name: Install Dependencies
-        run: npm install --no-shrinkwrap
+        run: yarn install --no-lockfile
       - name: Run Tests
-        run: npm run test:ember
+        run: yarn run test
 
   try-scenarios:
     name: ${{ matrix.try-scenario }}
@@ -64,13 +65,14 @@ jobs:
           - embroider-optimized
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Install Node
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: 12.x
-          cache: npm
+          node-version: 12
+          cache: yarn
       - name: Install Dependencies
-        run: npm ci
+        run: yarn
       - name: Run Tests
-        run: ./node_modules/.bin/ember try:one ${{ matrix.try-scenario }}
+        run: yarn ember try:one ${{ matrix.try-scenario }}
+        working-directory: test-app
