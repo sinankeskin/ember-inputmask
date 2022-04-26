@@ -75,3 +75,4 @@ jobs:
         run: yarn
       - name: Run Tests
         run: yarn ember try:one ${{ matrix.try-scenario }}
+        working-directory: test-app
