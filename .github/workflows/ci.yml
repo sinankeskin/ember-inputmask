@@ -28,15 +28,15 @@ jobs:
       - name: Lint
         run: yarn run lint
       - name: Run Tests
-        run: yarn run test:ember
+        run: yarn run test
 
   floating:
     name: "Floating Dependencies"
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
           node-version: 12.x
           cache: npm
@@ -64,9 +64,9 @@ jobs:
           - embroider-optimized
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Install Node
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: 12.x
           cache: npm
