@@ -47,7 +47,7 @@
     "@babel/core": "^7.17.9",
     "@babel/eslint-parser": "^7.17.0",
     "@babel/plugin-proposal-class-properties": "^7.16.7",
-    "@babel/plugin-proposal-decorators": "^7.17.9",
+    "@babel/plugin-proposal-decorators": "^7.18.9",
     "@embroider/addon-dev": "^1.6.0",
     "@rollup/plugin-babel": "^5.3.1",
     "eslint": "^8.11.0",
