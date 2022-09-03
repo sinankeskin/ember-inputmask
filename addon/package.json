@@ -39,26 +39,26 @@
   ],
   "dependencies": {
     "@ember/render-modifiers": "^2.0.4",
-    "@embroider/addon-shim": "^1.6.0",
-    "ember-modifier": "^3.1.0",
+    "@embroider/addon-shim": "^1.8.3",
+    "ember-modifier": "^3.2.7",
     "inputmask": "^5.0.7"
   },
   "devDependencies": {
-    "@babel/core": "^7.17.9",
-    "@babel/eslint-parser": "^7.17.0",
-    "@babel/plugin-proposal-class-properties": "^7.16.7",
-    "@babel/plugin-proposal-decorators": "^7.17.9",
-    "@embroider/addon-dev": "^1.6.0",
+    "@babel/core": "^7.18.13",
+    "@babel/eslint-parser": "^7.18.9",
+    "@babel/plugin-proposal-class-properties": "^7.18.6",
+    "@babel/plugin-proposal-decorators": "^7.18.10",
+    "@embroider/addon-dev": "^1.8.3",
     "@rollup/plugin-babel": "^5.3.1",
-    "eslint": "^8.11.0",
+    "eslint": "^8.23.0",
     "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-ember": "^10.5.9",
+    "eslint-plugin-ember": "^11.0.6",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-qunit": "^7.2.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-qunit": "^7.3.1",
     "npm-run-all": "^4.1.5",
-    "prettier": "^2.5.1",
-    "rollup": "^2.70.1"
+    "prettier": "^2.7.1",
+    "rollup": "^2.79.0"
   },
   "engines": {
     "node": "12.* || 14.* || >= 16"
