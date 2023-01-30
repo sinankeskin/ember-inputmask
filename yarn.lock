@@ -1369,6 +1369,15 @@
     walk-sync "^3.0.0"
     yargs "^17.0.1"
 
+"@embroider/addon-shim@^1.6.0":
+  version "1.8.4"
+  resolved "https://registry.yarnpkg.com/@embroider/addon-shim/-/addon-shim-1.8.4.tgz#0e7f32c5506bf0f3eb0840506e31c36c7053763c"
+  integrity sha512-sFhfWC0vI18KxVenmswQ/ShIvBg4juL8ubI+Q3NTSdkCTeaPQ/DIOUF6oR5DCQ8eO/TkIaw+kdG3FkTY6yNJqA==
+  dependencies:
+    "@embroider/shared-internals" "^2.0.0"
+    broccoli-funnel "^3.0.8"
+    semver "^7.3.8"
+
 "@embroider/addon-shim@^1.8.3":
   version "1.8.3"
   resolved "https://registry.yarnpkg.com/@embroider/addon-shim/-/addon-shim-1.8.3.tgz#2368510b8ce42d50d02cb3289c32e260dfa34bd9"
@@ -1460,6 +1469,20 @@
   version "1.8.3"
   resolved "https://registry.yarnpkg.com/@embroider/shared-internals/-/shared-internals-1.8.3.tgz#52d868dc80016e9fe983552c0e516f437bf9b9f9"
   integrity sha512-N5Gho6Qk8z5u+mxLCcMYAoQMbN4MmH+z2jXwQHVs859bxuZTxwF6kKtsybDAASCtd2YGxEmzcc1Ja/wM28824w==
+  dependencies:
+    babel-import-util "^1.1.0"
+    ember-rfc176-data "^0.3.17"
+    fs-extra "^9.1.0"
+    js-string-escape "^1.0.1"
+    lodash "^4.17.21"
+    resolve-package-path "^4.0.1"
+    semver "^7.3.5"
+    typescript-memoize "^1.0.1"
+
+"@embroider/shared-internals@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@embroider/shared-internals/-/shared-internals-2.0.0.tgz#d8205ec6944362aeecfbb51143db352430ced316"
+  integrity sha512-qZ2/xky9mWm5YC6noOa6AiAwgISEQ78YTZNv4SNu2PFgEK/H+Ha/3ddngzGSsnXkVnIHZyxIBzhxETonQYHY9g==
   dependencies:
     babel-import-util "^1.1.0"
     ember-rfc176-data "^0.3.17"
@@ -5247,6 +5270,16 @@ ember-disable-prototype-extensions@^1.1.3:
   resolved "https://registry.npmjs.org/ember-disable-prototype-extensions/-/ember-disable-prototype-extensions-1.1.3.tgz"
   integrity sha1-GWkTUhdlS14nj5/i2dTkm1cgMp4=
 
+ember-inputmask5@4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/ember-inputmask5/-/ember-inputmask5-4.0.1.tgz#8d138680c1b2f509b805948b49bc978930257139"
+  integrity sha512-1mUYHyb4CrngBxZdiel1o5QdSX8FFIEHizIkMhQgQHhIJHewdwbSy4Bb7Vx97yMCno3emof8xERXvglCF0Tdyw==
+  dependencies:
+    "@ember/render-modifiers" "^2.0.4"
+    "@embroider/addon-shim" "^1.6.0"
+    ember-modifier "^3.1.0"
+    inputmask "^5.0.7"
+
 ember-load-initializers@^2.1.2:
   version "2.1.2"
   resolved "https://registry.npmjs.org/ember-load-initializers/-/ember-load-initializers-2.1.2.tgz"
@@ -5264,7 +5297,7 @@ ember-modifier-manager-polyfill@^1.2.0:
     ember-cli-version-checker "^2.1.2"
     ember-compatibility-helpers "^1.2.0"
 
-ember-modifier@^3.2.7:
+ember-modifier@^3.1.0, ember-modifier@^3.2.7:
   version "3.2.7"
   resolved "https://registry.yarnpkg.com/ember-modifier/-/ember-modifier-3.2.7.tgz#f2d35b7c867cbfc549e1acd8d8903c5ecd02ea4b"
   integrity sha512-ezcPQhH8jUfcJQbbHji4/ZG/h0yyj1jRDknfYue/ypQS8fM8LrGcCMo0rjDZLzL1Vd11InjNs3BD7BdxFlzGoA==
@@ -10129,10 +10162,10 @@ rollup-plugin-delete@^2.0.0:
   dependencies:
     del "^5.1.0"
 
-rollup@^2.79.0:
-  version "2.79.0"
-  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.79.0.tgz#9177992c9f09eb58c5e56cbfa641607a12b57ce2"
-  integrity sha512-x4KsrCgwQ7ZJPcFA/SUu6QVcYlO7uRLfLAy0DSA4NS2eG8japdbpM50ToH7z4iObodRYOJ0soneF0iaQRJ6zhA==
+rollup@^3.12.0:
+  version "3.12.0"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-3.12.0.tgz#813d88ec11e36108da788fc471b3c81b365a7c29"
+  integrity sha512-4MZ8kA2HNYahIjz63rzrMMRvDqQDeS9LoriJvMuV0V6zIGysP36e9t4yObUfwdT9h/szXoHQideICftcdZklWg==
   optionalDependencies:
     fsevents "~2.3.2"
 
@@ -10302,6 +10335,13 @@ semver@^7.0.0, semver@^7.3.2, semver@^7.3.4, semver@^7.3.5, semver@^7.3.7:
   version "7.3.7"
   resolved "https://registry.npmjs.org/semver/-/semver-7.3.7.tgz"
   integrity sha512-QlYTucUYOews+WeEujDoEGziz4K6c47V/Bd+LjSSYcA94p+DmINdf7ncaUinThfvZyu13lN9OY1XDxt8C0Tw0g==
+  dependencies:
+    lru-cache "^6.0.0"
+
+semver@^7.3.8:
+  version "7.3.8"
+  resolved "https://registry.yarnpkg.com/semver/-/semver-7.3.8.tgz#07a78feafb3f7b32347d725e33de7e2a2df67798"
+  integrity sha512-NB1ctGL5rlHrPJtFDVIVzTyQylMLu9N9VICA6HSFJo8MCGVTMW6gfpicwKmmK/dAjTOrqu5l63JJOpDSrAis3A==
   dependencies:
     lru-cache "^6.0.0"
 
