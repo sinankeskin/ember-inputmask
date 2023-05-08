@@ -39,7 +39,7 @@
   ],
   "dependencies": {
     "@ember/render-modifiers": "^2.0.4",
-    "@embroider/addon-shim": "^1.8.3",
+    "@embroider/addon-shim": "^1.8.4",
     "ember-modifier": "^3.2.7",
     "inputmask": "^5.0.7"
   },
