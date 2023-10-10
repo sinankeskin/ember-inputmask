@@ -12,6 +12,15 @@ module('Integration | Component | inputmask', function (hooks) {
   It also verifys that options, like mask and update are also passed correctly.
    */
   module('when the input is filled in', function () {
+    test('it updates value with masks', async function (assert) {
+      await render(hbs`<Inputmask @mask='999 999 99 99' />`);
+
+      let inputMaskElement = find('input');
+      await fillIn(inputMaskElement, '98');
+
+      assert.dom(inputMaskElement).hasValue('98_ ___ __ __', 'text in input');
+    });
+
     module('when update', function () {
       test('it calls @update with value', async function (assert) {
         this.value = undefined;
@@ -26,10 +35,8 @@ module('Integration | Component | inputmask', function (hooks) {
 
         let inputMaskElement = find('input');
         await fillIn(inputMaskElement, '98');
-        // verifying inputmask was correctly attached to inputmask and that the mask was passed
-        assert.dom(inputMaskElement).hasValue('98_ ___ __ __', 'text in input');
         await blur(inputMaskElement);
-        // verifying the function was passed to inputmask
+
         assert.strictEqual(this.value, '98', 'value');
       });
     });
@@ -48,40 +55,27 @@ module('Integration | Component | inputmask', function (hooks) {
 
         let inputMaskElement = find('input');
         await fillIn(inputMaskElement, '98');
-        // verifying inputmask was correctly attached to inputmask and that the mask was passed
-        assert.dom(inputMaskElement).hasValue('98_ ___ __ __', 'text in input');
         await blur(inputMaskElement);
-        // verifying the function was passed to inputmask
+
         assert.strictEqual(this.value, '98_ ___ __ __', 'value');
       });
     });
   });
 
-  test('updates when params change', async function (assert) {
-    class TestClass {
-      @tracked mask = '999 999 99 99';
-    }
-    this.testClass = new TestClass();
+  module('when params change', function () {
+    test('updates when params change', async function (assert) {
+      class TestClass {
+        @tracked mask = '999 999 99 99';
+      }
+      this.testClass = new TestClass();
 
-    this.value = undefined;
+      await render(hbs`<Inputmask @mask={{this.testClass.mask}}/>`);
+      let inputMaskElement = find('input');
+      await fillIn(inputMaskElement, '98');
+      this.testClass.mask = '999 999';
+      await settled();
 
-    this.onUpdate = (value) => {
-      this.value = value;
-    };
-
-    await render(
-      hbs`<Inputmask @mask={{this.testClass.mask}} @update={{this.onUpdate}} />`
-    );
-    let inputMaskElement = find('input');
-    await fillIn(inputMaskElement, '98');
-    // verifying inputmask was correctly attached to inputmask and that the mask was passed
-    assert.dom(inputMaskElement).hasValue('98_ ___ __ __', 'text in input');
-    await blur(inputMaskElement);
-    // verifying the function was passed to inputmask
-    assert.strictEqual(this.value, '98', 'value');
-
-    this.testClass.mask = '999 999';
-    await settled();
-    assert.dom(inputMaskElement).hasValue('98_ ___', 'text in input');
+      assert.dom(inputMaskElement).hasValue('98_ ___', 'text in input');
+    });
   });
 });
