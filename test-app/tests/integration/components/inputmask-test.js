@@ -78,4 +78,17 @@ module('Integration | Component | inputmask', function (hooks) {
       assert.dom(inputMaskElement).hasValue('98_ ___', 'text in input');
     });
   });
+
+  module('when InputMask is datetime', function () {
+    test('should manage input and output format', async function (assert) {
+      let registeredAPI
+      this.register = ({inputmask}) => (registeredAPI = inputmask);
+
+      await render(hbs`<Input {{inputmask alias="datetime" inputFormat="dd/mm/yyyy" outputFormat="yyyy-mm-dd" registerAPI=this.register}}/>`);
+      let inputMaskElement = find('input');
+      await fillIn(inputMaskElement, '28/02/2000');
+
+      assert.strictEqual(registeredAPI.unmaskedvalue(), '2000-02-28');
+    });
+  });
 });
