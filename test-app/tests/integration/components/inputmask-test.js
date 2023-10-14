@@ -102,5 +102,37 @@ module('Integration | Component | inputmask', function (hooks) {
         assert.dom(inputMaskElement).hasValue('98_ ___', 'text in input');
       });
     });
+
+    module('when using extensions', function () {
+      module('when datetime', function () {
+        test('should manage input and output format', async function (assert) {
+          let registeredAPI;
+          this.register = ({ inputmask }) => (registeredAPI = inputmask);
+
+          await render(
+            hbs`<Input {{inputmask alias="datetime" inputFormat="dd/mm/yyyy" outputFormat="yyyy-mm-dd" registerAPI=this.register}}/>`
+          );
+          let inputMaskElement = find('input');
+          await fillIn(inputMaskElement, '28/02/2000');
+          assert.strictEqual(registeredAPI.unmaskedvalue(), '2000-02-28');
+        });
+      });
+
+      module('when currency (numeric)', function () {
+        test('should manage numbers with 2 digits', async function (assert) {
+          let registeredAPI;
+          this.register = ({ inputmask }) => (registeredAPI = inputmask);
+
+          await render(
+            hbs`<Input {{inputmask alias="currency" unmaskAsNumber="true" min="3" max="1000000" groupSeparator=" " registerAPI=this.register}}/>`
+          );
+          let inputMaskElement = find('input');
+          await fillIn(inputMaskElement, '1999.25');
+
+          assert.strictEqual(registeredAPI.unmaskedvalue() + 1, 2000.25);
+          assert.strictEqual(inputMaskElement.value, '1 999.25');
+        });
+      });
+    });
   });
 });
