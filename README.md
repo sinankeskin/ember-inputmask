@@ -82,6 +82,15 @@ openFocusOut() {
 }
 ```
 
+Datetime ([datetime extension](https://robinherbots.github.io/Inputmask/#/documentation/datetime))
+```javascript
+<Input {{inputmask alias="datetime" inputFormat="dd/mm/yyyy" outputFormat="yyyy-mm-dd"}}/>
+```
+
+Currency ([numeric extension](https://robinherbots.github.io/Inputmask/#/documentation/numeric))
+```javascript
+<Input {{inputmask alias="currency" unmaskAsNumber="true" min="0" max="1000000" groupSeparator=" "}}/>
+```
 ## Contributing
 
 See the [Contributing](CONTRIBUTING.md) guide for details.
