@@ -1,5 +1,9 @@
 # ember-inputmask5
 
+![ember-inputmask5 workflow](https://github.com/sinankeskin/ember-inputmask/actions/workflows/ci.yml/badge.svg)
+[![Ember Observer Score](https://emberobserver.com/badges/ember-inputmask5.svg)](https://emberobserver.com/addons/ember-inputmask5)
+
+
 Ember addon for [Inputmask](https://github.com/RobinHerbots/Inputmask/) input mask library.
 
 ## Compatibility
