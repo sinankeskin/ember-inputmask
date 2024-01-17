@@ -38,7 +38,7 @@
     "dist"
   ],
   "dependencies": {
-    "@ember/render-modifiers": "^2.0.4",
+    "@ember/render-modifiers": "^2.1.0",
     "@embroider/addon-shim": "^1.8.7",
     "ember-modifier": "^4.1.0",
     "inputmask": "^5.0.8"
