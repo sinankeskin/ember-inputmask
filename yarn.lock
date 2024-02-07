@@ -1787,6 +1787,13 @@
     estree-walker "^2.0.2"
     picomatch "^2.3.1"
 
+"@simple-dom/document@^1.4.0":
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/@simple-dom/document/-/document-1.4.0.tgz#af60855f957f284d436983798ef1006cca1a1678"
+  integrity sha512-/RUeVH4kuD3rzo5/91+h4Z1meLSLP66eXqpVAw/4aZmYozkeqUkMprq0znL4psX/adEed5cBgiNJcfMz/eKZLg==
+  dependencies:
+    "@simple-dom/interface" "^1.4.0"
+
 "@simple-dom/interface@^1.4.0":
   version "1.4.0"
   resolved "https://registry.npmjs.org/@simple-dom/interface/-/interface-1.4.0.tgz"
@@ -4630,12 +4637,13 @@ ember-modifier@^4.1.0:
     ember-cli-normalize-entity-name "^1.0.0"
     ember-cli-string-utils "^1.1.0"
 
-ember-page-title@^7.0.0:
-  version "7.0.0"
-  resolved "https://registry.npmjs.org/ember-page-title/-/ember-page-title-7.0.0.tgz"
-  integrity sha512-oq6+HYbeVD/BnxIO5AkP4gWlsatdgW2HFO10F8+XQiJZrwa7cC7Wm54JNGqQkavkDQTgNSiy1Fe2NILJ14MmAg==
+ember-page-title@^8.2.1:
+  version "8.2.1"
+  resolved "https://registry.yarnpkg.com/ember-page-title/-/ember-page-title-8.2.1.tgz#eb686de76b8979494530cf9bf1f1162775cd85e5"
+  integrity sha512-B2c/mQgzJHcr88rSEroLmUUAX3agYCowOf7mPtZei6wYusWDXoDMLT8Wls75iDwaNOKsPa2cF/KxPJGBuKiOSQ==
   dependencies:
-    ember-cli-babel "^7.26.6"
+    "@embroider/addon-shim" "^1.8.7"
+    "@simple-dom/document" "^1.4.0"
 
 ember-qunit@^8.0.2:
   version "8.0.2"
