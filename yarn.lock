@@ -61,7 +61,7 @@
     json5 "^2.2.3"
     semver "^6.3.1"
 
-"@babel/eslint-parser@^7.23.10":
+"@babel/eslint-parser@^7.23.10", "@babel/eslint-parser@^7.23.3":
   version "7.23.10"
   resolved "https://registry.yarnpkg.com/@babel/eslint-parser/-/eslint-parser-7.23.10.tgz#2d4164842d6db798873b40e0c4238827084667a2"
   integrity sha512-3wSYDPZVnhseRnxRJH6ZVTNknBz76AEnyC+AYYhasjP3Yy23qz0ERR7Fcd2SHmYuSFJ2kY9gaaDd3vyqU09eSw==
@@ -1530,6 +1530,13 @@
   dependencies:
     "@simple-dom/interface" "^1.4.0"
 
+"@glimmer/interfaces@^0.85.13":
+  version "0.85.13"
+  resolved "https://registry.yarnpkg.com/@glimmer/interfaces/-/interfaces-0.85.13.tgz#02ec31a29977cf06af5d1bb9f685f0ad453ae613"
+  integrity sha512-qOEdvFgCQX1g+Gfi/nA2zbKYPmEkEbhFgzZ5esgmlQNOSQx4j8nyGiBvnG/vepHrh4wUzTvIynrCQpfr3SiKXg==
+  dependencies:
+    "@simple-dom/interface" "^1.4.0"
+
 "@glimmer/reference@^0.83.1":
   version "0.83.1"
   resolved "https://registry.npmjs.org/@glimmer/reference/-/reference-0.83.1.tgz"
@@ -1558,6 +1565,17 @@
   dependencies:
     "@glimmer/interfaces" "0.84.3"
     "@glimmer/util" "0.84.3"
+    "@handlebars/parser" "~2.0.0"
+    simple-html-tokenizer "^0.5.11"
+
+"@glimmer/syntax@^0.85.13":
+  version "0.85.13"
+  resolved "https://registry.yarnpkg.com/@glimmer/syntax/-/syntax-0.85.13.tgz#841e6da0a555252f087145f83f92cf0d9cf76cb5"
+  integrity sha512-zMGkJh6JcHdCTx1emmBbhBrGO04gqD6CS5khmDwSJCIpVHnGH0Ejxp9rpnSMc5IW71/hFoQY6RlMgVYF2hrHhA==
+  dependencies:
+    "@glimmer/interfaces" "^0.85.13"
+    "@glimmer/util" "^0.85.13"
+    "@glimmer/wire-format" "^0.85.13"
     "@handlebars/parser" "~2.0.0"
     simple-html-tokenizer "^0.5.11"
 
@@ -1592,6 +1610,14 @@
   resolved "https://registry.npmjs.org/@glimmer/util/-/util-0.44.0.tgz"
   integrity sha512-duAsm30uVK9jSysElCbLyU6QQYO2X9iLDLBIBUcCqck9qN1o3tK2qWiHbGK5d6g8E2AJ4H88UrfElkyaJlGrwg==
 
+"@glimmer/util@^0.85.13":
+  version "0.85.13"
+  resolved "https://registry.yarnpkg.com/@glimmer/util/-/util-0.85.13.tgz#a17824e5fd91e4e3f3847f38f600ecd3c1508dad"
+  integrity sha512-ogj65iukNKEPPqQ2bOD6CLsqxsFwmiGvTQbAsg1eh1MoPjxhNZMpLsT5CdQ10XE7yUALHGJ71SwxBSpAOGDmxg==
+  dependencies:
+    "@glimmer/env" "0.1.7"
+    "@glimmer/interfaces" "^0.85.13"
+
 "@glimmer/validator@0.83.1", "@glimmer/validator@^0.83.0":
   version "0.83.1"
   resolved "https://registry.npmjs.org/@glimmer/validator/-/validator-0.83.1.tgz"
@@ -1611,6 +1637,14 @@
   integrity sha512-HS2dEbJ3CgXn56wk/5QdudM7rE3vtNMvPIoG7Rrg+GhkGMNxBCIRxOeEF2g520j9rwlA2LAZFpc7MCDMFbTjNA==
   dependencies:
     babel-plugin-debug-macros "^0.3.4"
+
+"@glimmer/wire-format@^0.85.13":
+  version "0.85.13"
+  resolved "https://registry.yarnpkg.com/@glimmer/wire-format/-/wire-format-0.85.13.tgz#a8df8c44646b8f0d09dda187ac64f45c33904b63"
+  integrity sha512-q6bHPfjSYE9jH27L75lUzyhSpBA+iONzsJVXewdwO4GdYYCC4s+pfUaJg7ZYNFDcHDuVKUcLhBb/NICDzMA5Uw==
+  dependencies:
+    "@glimmer/interfaces" "^0.85.13"
+    "@glimmer/util" "^0.85.13"
 
 "@handlebars/parser@~2.0.0":
   version "2.0.0"
@@ -1983,6 +2017,27 @@
   version "1.2.0"
   resolved "https://registry.npmjs.org/@types/symlink-or-copy/-/symlink-or-copy-1.2.0.tgz"
   integrity sha512-Lja2xYuuf2B3knEsga8ShbOdsfNOtzT73GyJmZyY7eGl2+ajOqrs8yM5ze0fsSoYwvA6bw7/Qr7OZ7PEEmYwWg==
+
+"@typescript-eslint/scope-manager@^6.15.0":
+  version "6.21.0"
+  resolved "https://registry.yarnpkg.com/@typescript-eslint/scope-manager/-/scope-manager-6.21.0.tgz#ea8a9bfc8f1504a6ac5d59a6df308d3a0630a2b1"
+  integrity sha512-OwLUIWZJry80O99zvqXVEioyniJMa+d2GrqpUTqi5/v5D5rOrppJVBPa0yKCblcigC0/aYAzxxqQ1B+DS2RYsg==
+  dependencies:
+    "@typescript-eslint/types" "6.21.0"
+    "@typescript-eslint/visitor-keys" "6.21.0"
+
+"@typescript-eslint/types@6.21.0":
+  version "6.21.0"
+  resolved "https://registry.yarnpkg.com/@typescript-eslint/types/-/types-6.21.0.tgz#205724c5123a8fef7ecd195075fa6e85bac3436d"
+  integrity sha512-1kFmZ1rOm5epu9NZEZm1kckCDGj5UJEf7P1kliH4LKu/RkwpsfqqGmY2OOcUs18lSlQBKLDYBOGxRVtrMN5lpg==
+
+"@typescript-eslint/visitor-keys@6.21.0":
+  version "6.21.0"
+  resolved "https://registry.yarnpkg.com/@typescript-eslint/visitor-keys/-/visitor-keys-6.21.0.tgz#87a99d077aa507e20e238b11d56cc26ade45fe47"
+  integrity sha512-JJtkDduxLi9bivAB+cYOVMtbkqdPOhZ+ZI5LC47MIRrDV4Yn2o+ZnW10Nkmr28xRpSpdJ6Sm42Hjf2+REYXm0A==
+  dependencies:
+    "@typescript-eslint/types" "6.21.0"
+    eslint-visitor-keys "^3.4.1"
 
 "@ungap/structured-clone@^1.2.0":
   version "1.2.0"
@@ -3748,7 +3803,7 @@ content-disposition@0.5.4:
   dependencies:
     safe-buffer "5.2.1"
 
-content-tag@^1.1.2:
+content-tag@^1.1.2, content-tag@^1.2.2:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/content-tag/-/content-tag-1.2.2.tgz#8cbc3cdb9957a81f7c425b138e334330dd6fd78d"
   integrity sha512-9guqKIx2H+78N17otBpl8yLZbQGL5q1vBO/jDb3gF2JjixtcVpC62jDUNxjVMNoaZ09oxRX84ZOD6VX02qkVvg==
@@ -3874,12 +3929,12 @@ css-loader@^5.2.0:
     schema-utils "^3.0.0"
     semver "^7.3.5"
 
-css-tree@^2.0.4:
-  version "2.1.0"
-  resolved "https://registry.npmjs.org/css-tree/-/css-tree-2.1.0.tgz"
-  integrity sha512-PcysZRzToBbrpoUrZ9qfblRIRf8zbEAkU0AIpQFtgkFK0vSbzOmBCvdSAx2Zg7Xx5wiYJKUKk0NMP7kxevie/A==
+css-tree@^2.3.1:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/css-tree/-/css-tree-2.3.1.tgz#10264ce1e5442e8572fc82fbe490644ff54b5c20"
+  integrity sha512-6Fv1DV/TYw//QF5IzQdqsNDjx/wc8TrMBZsqjL9eW01tWb7R7k/mq+/VXfJCl7SoD5emsJop9cOByJZfs8hYIw==
   dependencies:
-    mdn-data "2.0.27"
+    mdn-data "2.0.30"
     source-map-js "^1.0.1"
 
 cssesc@^3.0.0:
@@ -4590,6 +4645,18 @@ ember-disable-prototype-extensions@^1.1.3:
   resolved "https://registry.npmjs.org/ember-disable-prototype-extensions/-/ember-disable-prototype-extensions-1.1.3.tgz"
   integrity sha1-GWkTUhdlS14nj5/i2dTkm1cgMp4=
 
+ember-eslint-parser@^0.2.5:
+  version "0.2.6"
+  resolved "https://registry.yarnpkg.com/ember-eslint-parser/-/ember-eslint-parser-0.2.6.tgz#81da7ba03630a7f7f9d2369587f2d654f32daa40"
+  integrity sha512-dwW9hPVqv147zyBbqFsF72cDmJk4X8AUYhiL8eGQAG4QOUR2uOuTA6I4tt8m5kG5LZiZbnk9Lymaju+NUyoJBQ==
+  dependencies:
+    "@babel/eslint-parser" "^7.23.3"
+    "@glimmer/syntax" "^0.85.13"
+    "@typescript-eslint/scope-manager" "^6.15.0"
+    content-tag "^1.2.2"
+    eslint-scope "^7.2.2"
+    html-tags "^3.3.1"
+
 ember-inputmask5@4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/ember-inputmask5/-/ember-inputmask5-4.0.1.tgz#8d138680c1b2f509b805948b49bc978930257139"
@@ -4661,10 +4728,10 @@ ember-resolver@^11.0.1:
   dependencies:
     ember-cli-babel "^7.26.11"
 
-ember-rfc176-data@^0.3.15, ember-rfc176-data@^0.3.17:
-  version "0.3.17"
-  resolved "https://registry.npmjs.org/ember-rfc176-data/-/ember-rfc176-data-0.3.17.tgz"
-  integrity sha512-EVzTTKqxv9FZbEh6Ktw56YyWRAA0MijKvl7H8C06wVF+8f/cRRz3dXxa4nkwjzyVwx4rzKGuIGq77hxJAQhWWw==
+ember-rfc176-data@^0.3.17, ember-rfc176-data@^0.3.18:
+  version "0.3.18"
+  resolved "https://registry.yarnpkg.com/ember-rfc176-data/-/ember-rfc176-data-0.3.18.tgz#bb6fdcef49999981317ea81b6cc9210fb4108d65"
+  integrity sha512-JtuLoYGSjay1W3MQAxt3eINWXNYYQliK90tLwtb8aeCuQK8zKGCRbBodVIrkcTqshULMnRuTOS6t1P7oQk3g6Q==
 
 ember-router-generator@^2.0.0:
   version "2.0.0"
@@ -4962,16 +5029,18 @@ eslint-config-prettier@^9.1.0:
   resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-9.1.0.tgz#31af3d94578645966c082fcb71a5846d3c94867f"
   integrity sha512-NSWl5BFQWEPi1j4TjVNItzYV7dZXZ+wP6I6ZhrBGpChQhZRUaElihE9uRRkcbRnNb76UMKDF3r+WTmNcGPKsqw==
 
-eslint-plugin-ember@^11.0.6:
-  version "11.0.6"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-ember/-/eslint-plugin-ember-11.0.6.tgz#95fc44639b9f8f3d5a0f7a20bd06903a32194798"
-  integrity sha512-iQzqn8/GdBbNv2T3YetpjEBemoH0v9e9ea8Bu6JLOX2TN+HMK2l52/QBRFgrnaxLXBjPO3iy2c3sCieYV27EvQ==
+eslint-plugin-ember@^12.0.1:
+  version "12.0.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-ember/-/eslint-plugin-ember-12.0.1.tgz#a9c52cf7199b9febf911924f7787bcdc7209fb59"
+  integrity sha512-tRKyauzfQUCNgtAJbuO2AiRl+kj+Uw0agGMDUiMffjJGEaaLCflSe0fPEfA81iZuOtNRxMzl0n5UbZ8chw8hrA==
   dependencies:
     "@ember-data/rfc395-data" "^0.0.4"
-    css-tree "^2.0.4"
-    ember-rfc176-data "^0.3.15"
+    css-tree "^2.3.1"
+    ember-eslint-parser "^0.2.5"
+    ember-rfc176-data "^0.3.18"
     eslint-utils "^3.0.0"
-    estraverse "^5.2.0"
+    estraverse "^5.3.0"
+    lodash.camelcase "^4.3.0"
     lodash.kebabcase "^4.1.1"
     requireindex "^1.2.0"
     snake-case "^3.0.3"
@@ -5143,7 +5212,7 @@ estraverse@^4.1.1:
   resolved "https://registry.npmjs.org/estraverse/-/estraverse-4.3.0.tgz"
   integrity sha512-39nnKffWz8xN1BU/2c79n9nB9HDzo0niYUqx6xyqUnyoAnQyyWpOTdZEeiCch8BBu515t4wp9ZmgVfVhn9EBpw==
 
-estraverse@^5.1.0, estraverse@^5.2.0:
+estraverse@^5.1.0, estraverse@^5.2.0, estraverse@^5.3.0:
   version "5.3.0"
   resolved "https://registry.npmjs.org/estraverse/-/estraverse-5.3.0.tgz"
   integrity sha512-MMdARuVEQziNTeJD8DgMqmhwR11BRQ/cBP+pLtYdSTnf3MIO8fFeiINEbX36ZdNlfU/7A9f3gUw49B3oQsvwBA==
@@ -6274,6 +6343,11 @@ html-encoding-sniffer@^2.0.1:
   dependencies:
     whatwg-encoding "^1.0.5"
 
+html-tags@^3.3.1:
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/html-tags/-/html-tags-3.3.1.tgz#a04026a18c882e4bba8a01a3d39cfe465d40b5ce"
+  integrity sha512-ztqyC3kLto0e9WbNp0aeP+M3kTt+nbaIveGmUxAtZa+8iFgKLUOD4YKM5j+f3QD89bra7UeumolZHKuOXnTmeQ==
+
 http-cache-semantics@^4.0.0:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/http-cache-semantics/-/http-cache-semantics-4.1.1.tgz#abe02fcb2985460bf0323be664436ec3476a6d5a"
@@ -7222,6 +7296,11 @@ lodash.assignin@^4.1.0:
   resolved "https://registry.npmjs.org/lodash.assignin/-/lodash.assignin-4.2.0.tgz"
   integrity sha1-uo31+4QesKPoBEIysOJjqNxqKKI=
 
+lodash.camelcase@^4.3.0:
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/lodash.camelcase/-/lodash.camelcase-4.3.0.tgz#b28aa6288a2b9fc651035c7711f65ab6190331a6"
+  integrity sha512-TwuEnCnxbc3rAvhf/LbG7tJUDzhqXyFnv3dtzLOPgCG/hODL7WFnsbwktkD7yUV0RrreP/l1PALq/YSg6VvjlA==
+
 lodash.castarray@^4.4.0:
   version "4.4.0"
   resolved "https://registry.npmjs.org/lodash.castarray/-/lodash.castarray-4.4.0.tgz"
@@ -7463,10 +7542,10 @@ matcher-collection@^2.0.0, matcher-collection@^2.0.1:
     "@types/minimatch" "^3.0.3"
     minimatch "^3.0.2"
 
-mdn-data@2.0.27:
-  version "2.0.27"
-  resolved "https://registry.npmjs.org/mdn-data/-/mdn-data-2.0.27.tgz"
-  integrity sha512-kwqO0I0jtWr25KcfLm9pia8vLZ8qoAKhWZuZMbneJq3jjBD3gl5nZs8l8Tu3ZBlBAHVQtDur9rdDGyvtfVraHQ==
+mdn-data@2.0.30:
+  version "2.0.30"
+  resolved "https://registry.yarnpkg.com/mdn-data/-/mdn-data-2.0.30.tgz#ce4df6f80af6cfbe218ecd5c552ba13c4dfa08cc"
+  integrity sha512-GaqWWShW4kv/G9IEucWScBx9G1/vsFZZJUO+tD26M8J8z3Kw5RDQjaoZe03YAClgeS/SWPOcb4nkFBTEi5DUEA==
 
 mdurl@^1.0.1:
   version "1.0.1"
